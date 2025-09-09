@@ -10,7 +10,7 @@ const navItems = [
     { to: '/posts', title: 'Posts', icon: <FileText size={18} /> },
     { to: '/privacy', title: 'Privacy', icon: <Shield size={18} /> },
     { to: '/admin/settings', title: 'Settings', icon: <Settings size={18} /> },
-    { to: '/admin/user', title: 'Users', icon: <Users size={18} /> },
+    { to: '/admin/users', title: 'Users', icon: <Users size={18} /> },
 ];
 function Header() {
     return (
@@ -39,8 +39,12 @@ function Header() {
 
                 {/* Actions */}
                 <div className={styles.actions}>
-                    <button className={styles.btn}>Login</button>
-                    <button className={clsx(styles.btn, styles.btnPrimary)}>Register</button>
+                    <NavLink to="/login" className={styles.btn}>
+                        Đăng nhập
+                    </NavLink>
+                    <NavLink to="/register" className={clsx(styles.btn, styles.btnPrimary)}>
+                        Đăng ký
+                    </NavLink>
                 </div>
             </div>
         </header>

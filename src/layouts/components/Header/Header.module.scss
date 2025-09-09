@@ -29,17 +29,14 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 0.5rem;
         border-radius: 0.5rem;
     }
 
     li {
         display: flex;
         align-items: center;
-        
-        a {
-            padding: 10px;
-        }
+
         .active {
 
             background: teal;
@@ -59,12 +56,12 @@
     transition: color 0.2s, background 0.2s, padding 0.2s;
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
+    height: 40px;
 
-    &:hover {
+    &:hover,
+    &.active {
         background: teal;
         color: white;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.5rem;
     }
 }
 
@@ -79,10 +76,15 @@
     border: 1px solid #ccc;
     background: white;
     color: #333;
-    border-radius: 999px;
-    padding: 0.25rem 0.75rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 40px;
 
     &:hover {
         background: #f0f0f0;
