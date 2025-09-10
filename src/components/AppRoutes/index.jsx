@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import DefaultLayout from '../../layouts/DefaultLayout';
 import Home from '../../pages/Home';
@@ -18,10 +18,14 @@ import User from '../../pages/User';
 import Settings from '../../pages/Settings';
 
 import Notfound from '../../pages/Notfound';
+import ScrollToTop from "../ScrollToTop";
 
 function AppRoutes() {
   return (
-    <Router>
+    <HashRouter>
+      
+      <ScrollToTop />
+
       <Routes>
         {/* Default layout pages */}
         <Route element={<DefaultLayout />} >
@@ -50,7 +54,7 @@ function AppRoutes() {
         <Route path='*' element={ <Notfound />} />
 
       </Routes>
-    </Router>
+    </HashRouter>
   )
 }
 

@@ -1,0 +1,45 @@
+.container {
+  min-height: 100vh;
+  padding: 3rem 1rem;
+}
+
+.inner {
+  max-width: 64rem; /* tương đương max-w-4xl */
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose {
+  max-width: none;
+}
+
+.sectionTitle {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold;
+  color: #111827; /* text-gray-900 */
+  margin-bottom: 1.5rem;
+  margin-top: 2rem; /* mt-8 cho các section sau */
+}
+
+.paragraph {
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1rem;
+}
+
+.paragraphLarge {
+  color: #4b5563;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}

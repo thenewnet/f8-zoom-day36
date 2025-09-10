@@ -10,5 +10,17 @@
 
     .content {
         flex: 1;
+        display: flex;
+        gap: 10px;
+        margin: 0 10px;
+        .link {
+            color: #fff;
+
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
+
 }
