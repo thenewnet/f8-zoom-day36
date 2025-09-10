@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .header {
+        flex-shrink: 0;
+    }
+
+    .main {
+        display: flex;
+        flex: 1;
+
+        .sidebar {
+            flex: 0 0 200px;
+            background-color: #f0f0f0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 10px;
+        }
+    }
+
+    .footer {
+        flex-shrink: 0;
+        background: #333333;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+
+    }
+}

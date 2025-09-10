@@ -1,5 +1,5 @@
 .siteHeader {
-    background: #0a0a23;
+    background: #333333;
     padding: 0.5rem 0;
     color: white;
 }
@@ -16,10 +16,8 @@
     justify-content: space-between;
 }
 
-.logo img {
-    width: 80px;
-    height: auto;
-}
+
+
 
 /* ========== Navigation ========== */
 .nav {
@@ -75,7 +73,7 @@
 .btn {
     border: 1px solid #ccc;
     background: white;
-    color: #333;
+    color: #333333;
     padding: 0 1rem;
     border-radius: 0.5rem;
     cursor: pointer;

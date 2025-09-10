@@ -9,11 +9,22 @@ import AdminHeader from './components/AdminHeader';
 function AdminLayout() {
     return (
         <>
-            <AdminHeader />
-            <AdminSidebar />
-            <AdminFooter />
-            <div className="container">
-                <Outlet />
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <AdminHeader />
+                </div>
+                <div className={styles.main}>
+                    <div className={styles.sidebar}>
+                        <AdminSidebar />
+                    </div>
+                    <div className={styles.content}>
+                        <Outlet />
+                    </div>
+                </div>
+
+                <div className={styles.footer}>
+                    <AdminFooter />
+                </div>
             </div>
         </>
     )

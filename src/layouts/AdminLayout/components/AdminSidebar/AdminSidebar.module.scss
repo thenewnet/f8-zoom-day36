@@ -1,0 +1,52 @@
+.container {
+  width: 15rem;
+  height: 100vh;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-right: 1px solid #ddd;
+}
+
+.sidebarNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.btn {
+  display: flex;              
+  align-items: center;       
+  gap: 0.5rem;                
+  
+  align-self: stretch;
+               
+  border: 1px solid #ccc;
+  background: white;
+  color: #333;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.btnPrimary {
+  background: teal;
+  color: white;
+  border: none;
+
+  &:hover {
+    background: #008080cc;
+  }
+}

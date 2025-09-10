@@ -7,12 +7,17 @@ import Header from '../components/Header';
 function DefaultLayout() {
     return (
         <>
-            <Header />
-            <h1>DefaultLayout</h1>
             <div className={styles.container}>
-                <Outlet />
+                <div className={styles.header}>
+                    <Header />
+                </div>
+                <div className={styles.content}>
+                    <Outlet />
+                </div>
+                <div className={styles.footer}>
+                    <Footer />
+                </div>
             </div>
-            <Footer />
         </>
 
     )

@@ -2,6 +2,7 @@ import { Home, Info, Phone, FileText, Shield, Settings, Users } from "lucide-rea
 import clsx from "clsx";
 import styles from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
+import Logo from "../Logo";
 
 const navItems = [
     { to: '/', title: 'Home', icon: <Home size={18} /> },
@@ -17,9 +18,7 @@ function Header() {
         <header className={styles.siteHeader}>
             <div className={clsx(styles.container, styles.wrapper)}>
                 {/* Logo */}
-                <div className={styles.logo}>
-                    <img src="./logo.svg" alt="Logo" />
-                </div>
+                <Logo />
 
                 {/* Navigation */}
                 <nav className={styles.nav}>

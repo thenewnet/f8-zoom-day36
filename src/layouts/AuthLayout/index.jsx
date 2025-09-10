@@ -9,9 +9,13 @@ function AuthLayout() {
     return (
         <>
             <Header />
-            <AuthSidebar />
             <div className={styles.container}>
-                <Outlet />
+                <div className={styles.sidebar}>
+                    <AuthSidebar />
+                </div>
+                <div className={styles.content}>
+                    <Outlet />
+                </div>
             </div>
 
         </>

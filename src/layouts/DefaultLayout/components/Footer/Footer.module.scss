@@ -1,0 +1,14 @@
+.footer {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+    .logo {
+        flex: 0 0 auto;
+    }
+
+    .content {
+        flex: 1;
+    }
+}
