@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router";
 
 import styles from './Post.module.scss';
 import Pagination from '../../components/Pagination';
+import Loading from '../../components/Loading';
 
 function Post() {
     const [posts, setPosts] = useState([]);
@@ -12,8 +13,10 @@ function Post() {
     });
     const [totalPage, setTotalPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(10);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         fetch(
             `https://jsonplaceholder.typicode.com/posts?_limit=${itemsPerPage}&_page=${page}`
         )
@@ -25,6 +28,9 @@ function Post() {
             })
             .then((posts) => {
                 setPosts(posts);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, [page, itemsPerPage]);
 
@@ -36,35 +42,40 @@ function Post() {
         setPage(page);
     }
 
-    const handleChangeItemsPerPage =(itemsPerPage) => {
+    const handleChangeItemsPerPage = (itemsPerPage) => {
         setItemsPerPage(itemsPerPage);
         setPage(1);
     }
     return (
-        <>
-            <div className={styles.container}>
-                <h1 className={styles.page_title}>Posts</h1>
-                {
-                    posts.map((post) => {
-                        return (
-                            <div className={styles.item} key={post.id}>
-                                <p>{post.title}</p>
-                            </div>
-                        )
-                    })
-                }
 
-                <div className={styles.pagination}>
-                    <Pagination
-                        totalPages={totalPage}
-                        currentPage={page}
-                        onPageChange={handleChangePage}
-                        onChangeItemsPerPage={handleChangeItemsPerPage}
-                    />
-                </div>
-            </div>
+        <div className={styles.container}>
+            <h1 className={styles.page_title}>Posts</h1>
+            {
+                loading ? <Loading /> : (
+                    <>
+                        {
+                            posts.map((post) => {
+                                return (
+                                    <div className={styles.item} key={post.id}>
+                                        <p>{post.title}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                        <div className={styles.pagination}>
+                            <Pagination
+                                totalPages={totalPage}
+                                currentPage={page}
+                                onPageChange={handleChangePage}
+                                onChangeItemsPerPage={handleChangeItemsPerPage}
+                            />
+                        </div>
+                    </>
+                )
+            }
+        </div>
 
-        </>
+
     )
 }
 
