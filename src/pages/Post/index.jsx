@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 
 import styles from './Post.module.scss';
 import Pagination from '../../components/Pagination';
@@ -46,6 +46,8 @@ function Post() {
         setItemsPerPage(itemsPerPage);
         setPage(1);
     }
+
+
     return (
 
         <div className={styles.container}>
@@ -57,7 +59,7 @@ function Post() {
                             posts.map((post) => {
                                 return (
                                     <div className={styles.item} key={post.id}>
-                                        <p>{post.title}</p>
+                                        <Link to={`/posts/${post.id}`}>{post.title}</Link>
                                     </div>
                                 )
                             })
